@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl:"",
-    authUrl:""
+    apiUrl:"https://backend-ukn6.onrender.com/api",
+    authUrl:"https://backend-ukn6.onrender.com/api"
   };
   
