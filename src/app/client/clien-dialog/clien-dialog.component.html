@@ -1,0 +1,49 @@
+
+<div class="site-form-container" fxLayout="column" fxLayoutGap="20px">
+  <mat-card>
+    <mat-card-title>Add New Site</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="siteForm" (ngSubmit)="onSubmit()">
+
+        <!-- Site Name -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>client Name</mat-label>
+          <input matInput placeholder="Enter client name" formControlName="client_name" required>
+          <mat-error *ngIf="siteForm.get('client_name')?.hasError('required')">
+            client name is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Site Location -->
+        <!-- <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Location</mat-label>
+          <input matInput placeholder="Enter site location" formControlName="location" required>
+          <mat-error *ngIf="siteForm.get('location')?.hasError('required')">
+            Location is required
+          </mat-error>
+        </mat-form-field> -->
+
+              <!-- Organization Dropdown -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Select Organization </mat-label>
+          <mat-select formControlName="org_id" required>
+            <mat-option *ngFor="let c of org" [value]="c.id">
+              {{ c.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="siteForm.get('org_id')?.hasError('required')">
+            Organization is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Submit Button -->
+        <div fxLayout="row" fxLayoutAlign="end">
+          <button mat-raised-button color="primary" type="submit" [disabled]="siteForm.invalid">
+            Save
+          </button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

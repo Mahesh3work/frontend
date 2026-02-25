@@ -1,0 +1,137 @@
+/* Page background */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Main form container */
+form {
+  max-width: 1100px;
+  margin: auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Section box */
+fieldset {
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+/* Section title */
+legend {
+  font-weight: 600;
+  padding: 0 12px;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+/* Grid layout */
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Inputs & select */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #cfd6dd;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus state */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.15);
+}
+
+/* Textarea resize */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Make remarks full width */
+textarea[formcontrolname="remarks"] {
+  grid-column: span 3;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background: #3f51b5;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #303f9f;
+}
+
+button:disabled {
+  background: #9fa8da;
+  cursor: not-allowed;
+}
+
+/* Submit button alignment */
+button[type="submit"] {
+  display: block;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.full-width {
+  grid-column: span 3;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  fieldset {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  textarea[formcontrolname="remarks"] {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  textarea[formcontrolname="remarks"] {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,87 @@
+<div class="sidebar-content" [class.collapsed]="isCollapsed()">
+  <!-- Brand Header -->
+  <div class="sidebar-header">
+    <div class="brand-logo">
+      <mat-icon class="brand-icon">dashboard</mat-icon>
+      <div class="brand-text">
+        <h2>AK Auto</h2>
+        <span>Dashboard</span>
+      </div>
+    </div>
+    <button
+      mat-icon-button
+      class="collapse-btn"
+      (click)="toggleSidebar()"
+      [attr.aria-label]="'Toggle sidebar'"
+    >
+      <mat-icon>{{
+        isCollapsed() ? "chevron_right" : "chevron_left"
+      }}</mat-icon>
+    </button>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="sidebar-nav">
+    <!-- Main Navigation -->
+    <div class="nav-section">
+      <h3 class="nav-title">Main</h3>
+      <div class="nav-items">
+        <ng-container>
+          <a
+            *ngIf="userRole === 'SUPER' || userRole === 'PRODUCTION' || userRole === 'DESIGN' || userRole === 'SALES'"
+            mat-list-item
+            [routerLink]="['/dashboard', 'organizations']"
+            routerLinkActive="active"
+          >
+            <mat-icon >business</mat-icon>
+            <span >Organizations</span>
+          </a>
+        </ng-container>
+        <ng-container>
+          <a
+            *ngIf="userRole === 'SUPER' || userRole === 'PRODUCTION' || userRole === 'DESIGN' || userRole === 'SALES'"
+            mat-list-item
+            [routerLink]="['/dashboard', 'users']"
+            routerLinkActive="active"
+          >
+            <mat-icon >group</mat-icon>
+            <span >Users</span>
+          </a>
+        </ng-container>
+        <ng-container>
+          <a
+            *ngIf="userRole === 'SUPER' || userRole === 'PRODUCTION' || userRole === 'DESIGN' || userRole === 'SALES'"
+            mat-list-item
+            [routerLink]="['/dashboard', 'client']"
+            routerLinkActive="active"
+          >
+            <mat-icon >group</mat-icon>
+            <span >Client</span>
+          </a>
+        </ng-container>
+        <ng-container>
+          <a
+            *ngIf="userRole === 'SUPER' || userRole === 'PRODUCTION' || userRole === 'DESIGN' || userRole === 'SALES'"
+            mat-list-item
+            [routerLink]="['/dashboard', 'sites']"
+            routerLinkActive="active"
+          >
+            <mat-icon >location_on</mat-icon>
+            <span>Sites</span>
+          </a>
+        </ng-container>
+        <ng-container>
+          <a
+            *ngIf="userRole === 'SUPER' || userRole === 'PRODUCTION' || userRole === 'DESIGN' || userRole === 'SALES'"
+            mat-list-item
+            [routerLink]="['/dashboard', 'devices']"
+            routerLinkActive="active"
+          >
+            <mat-icon >devices</mat-icon>
+            <span >Devices</span>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,93 @@
+.page-card {
+  padding: 0;
+}
+
+.page-toolbar {
+  border-radius: 4px 4px 0 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.full-width-table {
+  width: 100%;
+}
+
+.no-data {
+  text-align: center;
+  padding: 16px;
+  color: #777;
+}
+
+/* Loading chip */
+.loadingsite {
+  background-color: #f9a825 !important; /* dark amber */
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  animation: pulse 1.5s infinite;
+}
+/* Dark Active chip */
+.activesite {
+  background-color: #1b5e20 !important; /* dark green */
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Inactive chip */
+.inactivesite {
+  background-color: #b71c1c !important; /* dark red */
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Text color for Material chip */
+.loadingsite .mdc-evolution-chip__text-label {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* ng-deep for Angular Material */
+::ng-deep .loadingsite {
+  background-color: #f9a825 !important;
+}
+
+::ng-deep .loadingsite .mdc-evolution-chip__text-label {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+mat-chip.activesite,
+mat-chip.inactivesite {
+  color: #ffffff !important;
+}
+
+.activesite .mdc-evolution-chip__text-label,
+.inactivesite .mdc-evolution-chip__text-label {
+  color: #ffffff !important;
+}
+
+::ng-deep .activesite {
+  background-color: #1b5e20 !important;
+}
+
+::ng-deep .activesite .mdc-evolution-chip__text-label {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+::ng-deep .inactivesite {
+  background-color: #b71c1c !important;
+}
+
+::ng-deep .inactivesite .mdc-evolution-chip__text-label {
+  color: #ffffff !important;
+  font-weight: 600;
+}

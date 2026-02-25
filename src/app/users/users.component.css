@@ -1,0 +1,38 @@
+.users-card {
+  padding: 0;
+}
+
+.users-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.search-field {
+  width: 220px;
+}
+
+.table-container {
+  overflow: auto;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+}
+
+mat-chip {
+  font-size: 12px;
+}
+
+td.mat-cell:last-child {
+  white-space: nowrap;
+}
+
+button[mat-icon-button] {
+  margin-right: 4px;
+}

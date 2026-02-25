@@ -1,0 +1,110 @@
+<mat-card class="page-card">
+
+  <!-- Toolbar -->
+  <mat-toolbar color="primary" class="page-toolbar">
+    <span>Devices</span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent" (click)="addDevice()">
+      <mat-icon>add</mat-icon>
+      Add Device
+    </button>
+  </mat-toolbar>
+
+  <!-- Table -->
+  <div class="table-container mat-elevation-z2">
+    <table mat-table [dataSource]="devices" class="full-width-table">
+
+      <!-- Device Name -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>  Name </th>
+        <td mat-cell *matCellDef="let device">
+          {{ device.name }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="site_name">
+        <th mat-header-cell *matHeaderCellDef> Site Name </th>
+        <td mat-cell *matCellDef="let device">
+          {{ device.site_name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="part_name">
+  <th mat-header-cell *matHeaderCellDef> Part Name </th>
+  <td mat-cell *matCellDef="let device">
+    <!-- {{ allDeviceData[device.device.device_id]?.part_name || 'N/A' }} -->
+        {{ device.part_name }}
+  </td>
+</ng-container>
+<ng-container matColumnDef="target">
+  <th mat-header-cell *matHeaderCellDef> Target </th>
+  <td mat-cell *matCellDef="let device">
+    <!-- {{ allDeviceData[device.device.device_id]?.target || 'N/A' }} -->
+      {{ device.target }}
+  </td>
+</ng-container>
+<ng-container matColumnDef="current_count">
+  <th mat-header-cell *matHeaderCellDef> Current Count </th>
+  <td mat-cell *matCellDef="let device">
+    <!-- {{ allDeviceData[device.device.device_id]?.current_count || 0 }} -->
+      {{ device.current_count }}
+  </td>
+</ng-container>
+<ng-container matColumnDef="status">
+  <th mat-header-cell *matHeaderCellDef>Status</th>
+  <td mat-cell *matCellDef="let device">
+
+    <ng-container [ngSwitch]="device.status">
+
+      <!-- ONLINE -->
+      <mat-chip *ngSwitchCase="'online'"
+                class="activesite"
+                selected>
+        Online
+      </mat-chip>
+
+      <!-- OFFLINE -->
+      <mat-chip *ngSwitchCase="'offline'"
+                class="inactivesite"
+                selected>
+        Offline
+      </mat-chip>
+
+      <!-- LOADING -->
+      <mat-chip *ngSwitchDefault
+                class="loadingsite"
+                selected>
+        Loading…
+      </mat-chip>
+
+    </ng-container>
+
+  </td>
+</ng-container>
+
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let device">
+          <button mat-icon-button color="primary" (click)="editDevice(device.id)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteDevice(device.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- No Data -->
+      <tr *ngIf="devices.length === 0">
+        <td colspan="2" class="no-data">
+          No devices found
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+</mat-card>

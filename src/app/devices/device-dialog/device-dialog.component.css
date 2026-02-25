@@ -1,0 +1,103 @@
+/* Make page take full height and allow scrolling */
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: auto;
+}
+
+/* Main container — full width */
+.device-form-container {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Enable scrolling inside */
+  overflow-y: auto;
+}
+
+/* Card styling */
+mat-card {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* Title */
+mat-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Fieldset layout */
+fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fafafa;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Section title */
+legend {
+  padding: 0 10px;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+/* Full width fields */
+.full-width {
+  grid-column: span 4;
+}
+
+/* Material fields */
+mat-form-field {
+  width: 100%;
+}
+
+/* Submit button area */
+button[type="submit"] {
+  margin-top: 10px;
+  min-width: 150px;
+}
+
+/* Hover effect */
+fieldset:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  fieldset {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full-width {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .device-form-container {
+    padding: 10px;
+  }
+}

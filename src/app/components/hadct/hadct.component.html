@@ -1,0 +1,130 @@
+<form [formGroup]="deviceForm" (ngSubmit)="onSubmit()">
+
+  <!-- DESIGN RELATED INFORMATION -->
+  <fieldset formGroupName="designInfo">
+    <legend>Design Related Information</legend>
+
+    <div class="field">
+      <label>Version</label>
+      <input formControlName="version">
+    </div>
+
+    <div class="field">
+      <label>Hardware</label>
+      <input formControlName="hardware">
+    </div>
+
+    <div class="field">
+      <label>Database</label>
+      <input formControlName="database">
+    </div>
+
+    <div class="field">
+      <label>OS</label>
+      <input formControlName="os">
+    </div>
+    <div class="field">
+      <label>URL</label>
+      <input formControlName="url">
+    </div>
+  </fieldset>
+
+  <!-- SALES RELATED INFORMATION -->
+  <fieldset formGroupName="salesInfo">
+    <legend>Sales Related Information</legend>
+
+    <div class="field">
+      <label>Sales Date</label>
+      <input type="date" formControlName="salesDate">
+    </div>
+
+    <div class="field">
+      <label>Customer Name</label>
+      <input formControlName="customerName">
+    </div>
+
+    <div class="field">
+      <label>Purchase / Order Number</label>
+      <input formControlName="orderNumber">
+    </div>
+
+    <div class="field">
+      <label>Quantity Ordered</label>
+      <input type="number" formControlName="quantityOrdered">
+    </div>
+
+    <div class="field">
+      <label>Invoice Number</label>
+      <input formControlName="invoiceNumber">
+    </div>
+
+    <div class="field">
+      <label>Delivery Date</label>
+      <input type="date" formControlName="deliveryDate">
+    </div>
+
+    <div class="field">
+      <label>Salesperson</label>
+      <input formControlName="salesperson">
+    </div>
+
+    <div class="field">
+      <label>Price</label>
+      <input type="number" formControlName="price">
+    </div>
+
+    <div class="field full-width">
+      <label>Remarks</label>
+      <textarea formControlName="remarks"></textarea>
+    </div>
+  </fieldset>
+
+  <!-- PRODUCTION RELATED INFORMATION -->
+  <fieldset formGroupName="productionInfo">
+    <legend>Production Related Information</legend>
+
+    <div class="field">
+      <label>Serial Number</label>
+      <input formControlName="serialNumber">
+    </div>
+
+    <div class="field">
+      <label>Product Name</label>
+      <input formControlName="productName">
+    </div>
+
+    <div class="field">
+      <label>Status</label>
+      <select formControlName="status">
+        <option value="">Select Status</option>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+        <option value="Rejected">Rejected</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Site Information</legend>
+      <div class="field">
+          <label>Select Site</label>
+          <select formControlName="site_id">
+            <option *ngFor="let site of siteList" [value]="site.site_id">
+              {{ site.name }}
+            </option>
+          </select>
+    </div> 
+    <div class="field">
+      <label for="">expiry date</label>
+      <input type="datetime-local" formControlName="expiry_date">
+    </div>
+  
+  </fieldset>
+
+  <button type="submit" [disabled]="deviceForm.invalid">
+    Submit
+  </button>
+
+</form>
+

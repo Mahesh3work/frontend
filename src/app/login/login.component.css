@@ -1,0 +1,45 @@
+/* Center the card in the middle of the screen */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full viewport height */
+  background: #f5f5f5; /* light background */
+}
+
+/* Style the card */
+mat-card {
+  width: 350px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background: white;
+}
+
+/* Center the title */
+mat-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Make form fields full width */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Style the button */
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+/* Style the signup button */
+.signup-button {
+  margin-top: 16px;
+}

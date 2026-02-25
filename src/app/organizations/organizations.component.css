@@ -1,0 +1,169 @@
+/* ================= PAGE LAYOUT ================= */
+
+.tables-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.tables-header {
+  margin-bottom: 32px;
+}
+
+.tables-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.tables-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* ================= CARD ================= */
+
+mat-card {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #dee8fb;
+}
+
+/* ================= TOOLBAR ================= */
+
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.table-toolbar mat-form-field {
+  flex: 1;
+  max-width: 320px;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* ================= TABLE ================= */
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 16px;
+  background-color: #f4f8ff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.table-container table {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* ================= TABLE HEADER ================= */
+
+.mat-header-row {
+  background-color: #c9daf8;
+}
+
+.mat-header-cell {
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 12px 8px;
+  color: #1f2937;
+}
+
+/* ================= TABLE BODY ================= */
+
+.mat-row {
+  background-color: #ffffff;
+}
+
+.mat-cell {
+  padding: 12px 8px;
+  color: #374151;
+}
+
+/* ================= ROW HOVER ================= */
+
+.mat-row:hover {
+  background-color: #eef4ff;
+}
+
+/* ================= CHECKBOX COLUMN ================= */
+
+.mat-column-select {
+  width: 48px;
+  padding-left: 8px;
+}
+
+/* ================= LOGO ================= */
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+/* ================= LINKS ================= */
+
+a {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.mat-column-actions {
+  white-space: nowrap;
+}
+
+.mat-icon-button {
+  margin-right: 6px;
+}
+
+/* ================= PAGINATOR ================= */
+
+mat-paginator {
+  background-color: #f4f8ff;
+  border-top: 1px solid #dbeafe;
+  border-radius: 0 0 10px 10px;
+  margin-top: 8px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .table-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-toolbar mat-form-field {
+    max-width: none;
+  }
+
+  .toolbar-actions {
+    justify-content: center;
+  }
+
+  .mat-header-cell,
+  .mat-cell {
+    padding: 10px 6px;
+  }
+}
